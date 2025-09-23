@@ -11,6 +11,7 @@
 #include <Rtypes.h>
 #include <RtypesCore.h>
 #include <TVector3.h>
+#include "Track.h"
 
 #include "HiddenInfo.h"
 
