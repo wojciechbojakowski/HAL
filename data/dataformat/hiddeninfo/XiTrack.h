@@ -62,6 +62,7 @@ namespace Hal {
     void SetDauDist(Double_t dauDist) { fDauDist = dauDist; }
 
     void SetDecayPos(const TVector3& pos) { fDecay = pos; }
+    void SetDecayPos(Double_t x, Double_t y, Double_t z) { fDecay.SetXYZ(x, y, z); }
     void RotateZ(Double_t /*phi*/) {};  // TODO implement
 
     /**
