@@ -128,7 +128,9 @@ namespace Hal {
      * @param pz
      * @param m mass of neutral daughter
      */
-    //void SetMomNeu(Double_t px, Double_t py, Double_t pz);
+    void SetMomNeu(Double_t px, Double_t py, Double_t pz){
+      fMomNeu.SetXYZ(px, py, pz);
+    }
     /**
      * set momentum of charged daughter
      * @param chargedDaughter
@@ -141,7 +143,9 @@ namespace Hal {
      * @param pz
      * @param m mass of positive daughter
      */
-    //void SetMomCharged(Double_t px, Double_t py, Double_t pz);
+    void SetMomCharged(Double_t px, Double_t py, Double_t pz){
+      fMomCharged.SetXYZ(px, py, pz);
+    }
 
     TVector3 GetMomNeu() const { return fMomNeu; }
     TVector3 GetMomCharged() const { return fMomCharged; }

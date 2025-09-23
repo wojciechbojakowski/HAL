@@ -15,6 +15,10 @@ namespace Hal {
   TrackChargeCut::TrackChargeCut() : TrackCut(1) { SetUnitName("Charge [e]"); }
 
   Bool_t TrackChargeCut::Pass(Track* tr) {
+    if (!tr) {
+        std::cerr << "Warning: null Track passed to TrackChargeCut::Pass\n";
+        return kFALSE;
+    }
     SetValue(tr->GetCharge());
     return Validate();
   }
