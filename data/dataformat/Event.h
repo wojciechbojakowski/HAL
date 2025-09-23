@@ -241,6 +241,11 @@ namespace Hal {
     inline Int_t GetTotalV0No() const { return fTotalV0s; };
     /**
      *
+     * @return total number of STORED Xi
+     */
+    inline Int_t GetTotalXiNo() const { return fTotalXis; };
+    /**
+     *
      * @return multiplicity of event
      */
     inline Int_t GetMutliplicity() const { return fMultiplicity; }
