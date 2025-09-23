@@ -7,6 +7,9 @@
  */
 
 #include "XiTrack.h"
+#include "V0Track.h"
+#include "ExpEvent.h"
+#include "Track.h"
 
 namespace Hal {
 
