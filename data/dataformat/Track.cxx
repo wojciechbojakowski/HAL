@@ -344,6 +344,7 @@ namespace Hal {
     std::cout<<"GetXiInfo called "<<!TESTBIT(fType, kXi)<<"\n";
     if (!TESTBIT(fType, kXi)) {return nullptr;
     std::cout<<"GetXiInfo returning nullptr\n";}
+    std::cout<<"Size of fXisHiddenInfo "<<fEvent->fXisHiddenInfo->GetTotalSize()<<"\n";
     return (XiTrack*) fEvent->fXisHiddenInfo->UncheckedAt(fHiddenInfo);
   }
 
