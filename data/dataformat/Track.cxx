@@ -325,6 +325,7 @@ namespace Hal {
   void Track::RotateZ(Double_t angle) { fP.RotateZ(angle); }
 
   void Track::EnableXi(Bool_t xi, Bool_t good) {
+    std::cout<<"EnableXi called with xi="<<xi<<" good="<<good<<"\n";
     if (xi) {
       SETBIT(fType, kXi);
       if (good)
