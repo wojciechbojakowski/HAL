@@ -51,6 +51,7 @@ namespace Hal {
       v0->CopyData(other->GetV0Info());
     }
     if (IsXi()) {
+      std::cout<<"CopyData Xi part called in Track\n";
       fHiddenInfo = GetEvent()->fTotalXis++;
       XiTrack* xi = (XiTrack*) GetEvent()->fXisHiddenInfo->ConstructedAt(fHiddenInfo);
       xi->CopyData(other->GetXiInfo());
@@ -340,6 +341,7 @@ namespace Hal {
   }
 
   XiTrack* Track::GetXiInfo() const {
+    std::cout<<"GetXiInfo called "<<!TESTBIT(fType, kXi)<<"\n";
     if (!TESTBIT(fType, kXi)) return nullptr;
     return (XiTrack*) fEvent->fXisHiddenInfo->UncheckedAt(fHiddenInfo);
   }
