@@ -343,8 +343,8 @@ namespace Hal {
   XiTrack* Track::GetXiInfo() const {
     std::cout<<"GetXiInfo called "<<!TESTBIT(fType, kXi)<<"\n";
     if (!TESTBIT(fType, kXi)) {return nullptr;
-    std::cout<<"GetXiInfo returning nullptr\n";}
-    std::cout<<"Size of fXisHiddenInfo "<<fEvent->fXisHiddenInfo.size()<<"\n";
+    std::cout<<"GetXiInfo returning nullptr\n";};
+    std::cout<<"Size of fXisHiddenInfo "<<fEvent->GetTotalXiNo()<<"\n";
     return (XiTrack*) fEvent->fXisHiddenInfo->UncheckedAt(fHiddenInfo);
   }
 
