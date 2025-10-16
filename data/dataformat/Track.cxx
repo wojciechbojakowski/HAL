@@ -334,6 +334,8 @@ namespace Hal {
       else
         CLRBIT(fType, kXiDaughters);
       fHiddenInfo = fEvent->fTotalXis;
+      std::cout<<"fHiddenInfo set to "<<fHiddenInfo<<"\n";
+      std::cout<<"track "<<this<<"\n";
       fEvent->fXisHiddenInfo->ConstructedAt(fEvent->fTotalXis++);
     } else {
       CLRBIT(fType, kXi);
@@ -344,7 +346,8 @@ namespace Hal {
     std::cout<<"GetXiInfo called "<<!TESTBIT(fType, kXi)<<"\n";
     if (!TESTBIT(fType, kXi)) {return nullptr;
     std::cout<<"GetXiInfo returning nullptr\n";};
-    std::cout<<"Size of fXisHiddenInfo "<<fEvent->GetTotalXiNo()<<"\n";
+    std::cout<<"fHiddenInfo getXi set to "<<fHiddenInfo<<"\n";
+    std::cout<<"track "<<this<<"\n";
     return (XiTrack*) fEvent->fXisHiddenInfo->UncheckedAt(fHiddenInfo);
   }
 
