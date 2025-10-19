@@ -21,10 +21,10 @@ namespace Hal {
   class Track;
   class V0Track;
   class XiTrack : public HiddenInfo {
-    Int_t fTrackId           = {-1};
+    Int_t fTrackId           = {-1};//to
     Int_t fV0Id              = {-1};
     Int_t fChargedId         = {-1};
-    Int_t fAssumedPdg        = {-1};
+    Int_t fAssumedPdg        = {-1};//to
     Int_t fAssumedPdgNeu     = {-1};
     Int_t fAssumedPdgCharged = {-1};
     TVector3 fDcaNeu;  // DCA of neutral daughter
@@ -33,9 +33,9 @@ namespace Hal {
     TVector3 fMomCharged;
     Double_t fAlpha;
     Double_t fPtArm;
-    TVector3 fDecay;
+    TVector3 fDecay;//to
     Double_t fDecayLength;
-    Double_t fCosAngle;
+    Double_t fCosAngle;//to
     Double_t fDauDist;
 
   public:

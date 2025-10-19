@@ -326,7 +326,7 @@ namespace Hal {
   void Track::RotateZ(Double_t angle) { fP.RotateZ(angle); }
 
   void Track::EnableXi(Bool_t xi, Bool_t good) {
-    std::cout<<"EnableXi called with xi="<<xi<<" good="<<good<<"\n";
+    // std::cout<<"EnableXi called with xi="<<xi<<" good="<<good<<"\n";
     if (xi) {
       SETBIT(fType, kXi);
       if (good)
@@ -334,8 +334,8 @@ namespace Hal {
       else
         CLRBIT(fType, kXiDaughters);
       fHiddenInfo = fEvent->fTotalXis;
-      std::cout<<"fHiddenInfo set to "<<fHiddenInfo<<"\n";
-      std::cout<<"track "<<this<<"\n";
+      // std::cout<<"fHiddenInfo set to "<<fHiddenInfo<<"\n";
+      // std::cout<<"track "<<this<<"\n";
       fEvent->fXisHiddenInfo->ConstructedAt(fEvent->fTotalXis++);
     } else {
       CLRBIT(fType, kXi);
@@ -343,11 +343,10 @@ namespace Hal {
   }
 
   XiTrack* Track::GetXiInfo() const {
-    std::cout<<"GetXiInfo called "<<!TESTBIT(fType, kXi)<<"\n";
-    if (!TESTBIT(fType, kXi)) {return nullptr;
-    std::cout<<"GetXiInfo returning nullptr\n";};
-    std::cout<<"fHiddenInfo getXi set to "<<fHiddenInfo<<"\n";
-    std::cout<<"track "<<this<<"\n";
+    // std::cout<<"GetXiInfo called "<<!TESTBIT(fType, kXi)<<"\n";
+    if (!TESTBIT(fType, kXi)) return nullptr;
+    // std::cout<<"fHiddenInfo getXi set to "<<fHiddenInfo<<"\n";
+    // std::cout<<"track "<<this<<"\n";
     return (XiTrack*) fEvent->fXisHiddenInfo->UncheckedAt(fHiddenInfo);
   }
 
