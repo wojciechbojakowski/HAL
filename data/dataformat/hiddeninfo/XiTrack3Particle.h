@@ -48,8 +48,8 @@ namespace Hal {
     TVector3 GetDecay() const { return fDecay; }
     Double_t GetDecayLength() const { return fDecayLength; }
     Double_t GetCosAngle() const { return fCosAngle; }
-    virtual void CopyData(XiTrack* v);
-    ClassDef(XiTrack, 1)
+    virtual void CopyData(XiTrack3Particle* v);
+    ClassDef(XiTrack3Particle, 1)
   };
 
 } /* namespace Hal */
