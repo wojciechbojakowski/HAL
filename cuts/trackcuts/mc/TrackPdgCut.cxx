@@ -22,6 +22,8 @@ namespace Hal {
 
   Bool_t TrackPdgCut::Pass(Track* track) {
     SetValue(((McTrack*) track)->GetPdg());
+    double temp = ((McTrack*) track)->GetPdg();
+    std::cout << "PDG: " << temp << std::endl;
     return Validate();
   }
 
