@@ -12,6 +12,7 @@
 #include "EventInterfaceAdvanced.h"
 #include "TrackInterface.h"
 #include "V0Track.h"
+#include "XiTrack3Particle.h"
 
 #include "CompressionMap.h"
 #include "Cout.h"
@@ -43,7 +44,7 @@ namespace Hal {
     fPDG           = TDatabasePDG::Instance();
     fVertex        = new TLorentzVector();
     fV0sHiddenInfo = new TClonesArray("Hal::V0Track");
-    fXisHiddenInfo = new TClonesArray("Hal::XiTrack");
+    fXisHiddenInfo = new TClonesArray("Hal::XiTrack3Particle"); //TODO Full implementation
   }
 
   Event::Event(TString track_class, TString v0_class, TString xi_class) :
@@ -300,7 +301,7 @@ namespace Hal {
     }
     const Int_t nXis = fXisHiddenInfo->GetEntriesFast();
     for (int i = 0; i < nXis; i++) {
-      auto vo = (XiTrack*) fXisHiddenInfo->UncheckedAt(i);
+      auto vo = (XiTrack3Particle*) fXisHiddenInfo->UncheckedAt(i);
       vo->RotateZ(phi);
     }
   }
