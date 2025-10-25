@@ -139,9 +139,10 @@ namespace Hal {
     }
     if (IsGoodXi()) {
       auto xiInfo = GetXiInfo();
-      xiInfo->SetV0Id(map.GetNewIndex(GetXiInfo()->GetV0Id()));
-      xiInfo->SetChId(map.GetNewIndex(GetXiInfo()->GetChId()));
-      xiInfo->SetTrackId(GetThisID());
+      //TODO: implement SetPdgDaughters in XiTrack3particle
+      // xiInfo->SetV0Id(map.GetNewIndex(GetXiInfo()->GetV0Id()));
+      // xiInfo->SetChId(map.GetNewIndex(GetXiInfo()->GetChId()));
+      // xiInfo->SetTrackId(GetThisID());
     }
   }
 
@@ -157,9 +158,10 @@ namespace Hal {
       }
       if (IsGoodXi()) {
         auto xiInfo = GetXiInfo();
-        xiInfo->SetTrackId(GetThisID());
-        xiInfo->SetV0Id(vec[2]);
-        xiInfo->SetChId(vec[3]);
+        //TODO: implement SetPdgDaughters in XiTrack3particle
+        // xiInfo->SetTrackId(GetThisID());
+        // xiInfo->SetV0Id(vec[2]);
+        // xiInfo->SetChId(vec[3]);
       }
     } else {
       if (IsGoodV0()) {
@@ -170,9 +172,10 @@ namespace Hal {
       }
       if (IsGoodXi()) {
         auto v0Info = GetXiInfo();
-        v0Info->SetTrackId(GetThisID());
-        v0Info->SetV0Id(vec[1]);
-        v0Info->SetChId(vec[2]);
+        //TODO: implement SetPdgDaughters in XiTrack3particle
+        // v0Info->SetTrackId(GetThisID());
+        // v0Info->SetV0Id(vec[1]);
+        // v0Info->SetChId(vec[2]);
       }
     }
   }
