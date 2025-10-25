@@ -216,13 +216,14 @@ namespace Hal {
      * @return true if needed branches exist in tree
      */
     virtual Bool_t ExistInTree() const { return kFALSE; };
-    /**void RotateZ(Double_t /*phi*/) {};
+    void RotateZ(Double_t phi) {};
+    /**
      * check if this buffered and "non-buffered" format are compatible
      * this function should be reimplemented only if user want to copy data from
      * other format
      * @param buffered return true if formats are compatible
      * @return
-     */
+     **/
     virtual Bool_t IsCompatible(const Event* non_buffered) const;
     /**
      *
