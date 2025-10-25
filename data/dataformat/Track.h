@@ -11,7 +11,7 @@
 #define HALTRACK_H_
 
 #include "V0Track.h"
-#include "XiTrack.h"
+#include "XiTrack3Particle.h"
 
 #include "Link.h"
 
@@ -249,7 +249,7 @@ namespace Hal {
      *
      * @returnpointer to standard hidden info
      */
-    XiTrack* GetXiInfo() const;
+    XiTrack3Particle* GetXiInfo() const;
     /**
      * mark tras as global if global is true
      * @param global

@@ -53,7 +53,7 @@ namespace Hal {
     if (IsXi()) {
       //std::cout<<"CopyData Xi part called in Track\n";
       fHiddenInfo = GetEvent()->fTotalXis++;
-      XiTrack* xi = (XiTrack*) GetEvent()->fXisHiddenInfo->ConstructedAt(fHiddenInfo);
+      XiTrack3Particle* xi = (XiTrack3Particle*) GetEvent()->fXisHiddenInfo->ConstructedAt(fHiddenInfo);
       xi->CopyData(other->GetXiInfo());
     }
   }
@@ -93,16 +93,17 @@ namespace Hal {
         vec[size++] = v0->GetNegId();
       }
       if (IsGoodXi()) {
-        XiTrack* xi  = GetXiInfo();
-        vec[size++]  = xi->GetV0Id();
-        vec[size++]  = xi->GetChId();
-        int v0id     = xi->GetV0Id();
-        auto v0track = GetEvent()->GetTrack(v0id);
-        if (v0track->IsGoodV0()) {
-          V0Track* v0 = v0track->GetV0Info();
-          vec[size++] = v0->GetPosId();
-          vec[size++] = v0->GetNegId();
-        }
+        XiTrack3Particle* xi  = GetXiInfo();
+        //TODO: implement SetPdgDaughters in XiTrack3particle
+        // vec[size++]  = xi->GetV0Id();
+        // vec[size++]  = xi->GetChId();
+        // int v0id     = xi->GetV0Id();
+        // auto v0track = GetEvent()->GetTrack(v0id);
+        // if (v0track->IsGoodV0()) {
+        //   V0Track* v0 = v0track->GetV0Info();
+        //   vec[size++] = v0->GetPosId();
+        //   vec[size++] = v0->GetNegId();
+        // }
       }
       return size;
     } else {
@@ -113,15 +114,16 @@ namespace Hal {
         vec.push_back(GetV0Info()->GetNegId());
       }
       if (IsGoodXi()) {
-        XiTrack* xi = GetXiInfo();
-        vec.push_back(xi->GetV0Id());
-        vec.push_back(xi->GetChId());
-        auto v0track = GetEvent()->GetTrack(xi->GetV0Id());
-        if (v0track->IsGoodV0()) {
-          V0Track* v0 = v0track->GetV0Info();
-          vec.push_back(v0->GetPosId());
-          vec.push_back(v0->GetNegId());
-        }
+        XiTrack3Particle* xi = GetXiInfo();
+        //TODO: implement SetPdgDaughters in XiTrack3particle
+        // vec.push_back(xi->GetV0Id());
+        // vec.push_back(xi->GetChId());
+        // auto v0track = GetEvent()->GetTrack(xi->GetV0Id());
+        // if (v0track->IsGoodV0()) {
+        //   V0Track* v0 = v0track->GetV0Info();
+        //   vec.push_back(v0->GetPosId());
+        //   vec.push_back(v0->GetNegId());
+        // }
       }
       return (int) vec.size();
     }
@@ -342,12 +344,12 @@ namespace Hal {
     }
   }
 
-  XiTrack* Track::GetXiInfo() const {
+  XiTrack3Particle* Track::GetXiInfo() const {
     // std::cout<<"GetXiInfo called "<<!TESTBIT(fType, kXi)<<"\n";
     if (!TESTBIT(fType, kXi)) return nullptr;
     // std::cout<<"fHiddenInfo getXi set to "<<fHiddenInfo<<"\n";
     // std::cout<<"track "<<this<<"\n";
-    return (XiTrack*) fEvent->fXisHiddenInfo->UncheckedAt(fHiddenInfo);
+    return (XiTrack3Particle*) fEvent->fXisHiddenInfo->UncheckedAt(fHiddenInfo);
   }
 
 }  // namespace Hal
