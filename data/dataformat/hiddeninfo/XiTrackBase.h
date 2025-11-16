@@ -94,3 +94,5 @@ public:
 
     ClassDef(XiTrack3Particle, 1);
 };
+
+#endif
