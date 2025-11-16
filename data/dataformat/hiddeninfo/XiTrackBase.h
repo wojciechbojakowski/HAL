@@ -90,9 +90,9 @@ public:
      */
     Double_t GetCosAngle() const { return fCosAngle; }
 
-    virtual void CopyData(XiTrack3Particle* v);
+    virtual void CopyData(XiTrackBase* v);
 
-    ClassDef(XiTrack3Particle, 1);
+    ClassDef(XiTrackBase, 1);
 };
 
 #endif
