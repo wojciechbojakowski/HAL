@@ -19,6 +19,7 @@
 #include "Const.h"
 #include "HiddenInfo.h"
 
+namespace Hal {
 class XiTrackBase : public HiddenInfo {
 protected:
     Int_t fTrackId        = -1;
@@ -94,5 +95,5 @@ public:
 
     ClassDef(XiTrackBase, 1);
 };
-
+}
 #endif
