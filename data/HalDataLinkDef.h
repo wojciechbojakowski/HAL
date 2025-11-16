@@ -50,6 +50,7 @@
 #pragma link C++ class Hal::V0Track + ;
 #pragma link C++ class Hal::XiTrack + ;
 #pragma link C++ class Hal::XiTrack3Particle + ;
+#pragma link C++ class Hal::XiTrackBase + ;
 #pragma link C++ class Hal::HiddenInfo + ;
 #pragma link C++ namespace Hal::DetectorID;
 #pragma link C++ namespace Hal::DataFieldID;

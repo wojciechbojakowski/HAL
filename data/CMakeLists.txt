@@ -49,6 +49,7 @@ dataformat/detector/DetectorEvent.cxx
 dataformat/hiddeninfo/V0Track.cxx
 dataformat/hiddeninfo/XiTrack.cxx
 dataformat/hiddeninfo/XiTrack3Particle.cxx
+dataformat/hiddeninfo/XiTrackBase.cxx
 dataformat/hiddeninfo/HiddenInfo.cxx
 
 io/AnalysisManager.cxx

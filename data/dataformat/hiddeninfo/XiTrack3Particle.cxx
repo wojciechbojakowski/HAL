@@ -14,14 +14,15 @@
 namespace Hal {
 
   void XiTrack3Particle::CopyData(XiTrack3Particle* v) {
+    XiTrackBase::CopyData(v);
     daughter1_id = v->daughter1_id;
     daughter2_id = v->daughter2_id;
     daughter3_id = v->daughter3_id;
-    fTrackId     = v->fTrackId;
-    fAssumedPdg  = v->fAssumedPdg;
-    fDecay       = v->fDecay;
-    fDecayLength = v->fDecayLength;
-    fCosAngle    = v->fCosAngle;
+    // fTrackId     = v->fTrackId;
+    // fAssumedPdg  = v->fAssumedPdg;
+    // fDecay       = v->fDecay;
+    // fDecayLength = v->fDecayLength;
+    // fCosAngle    = v->fCosAngle;
 
   }
 

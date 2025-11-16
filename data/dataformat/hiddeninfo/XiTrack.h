@@ -16,15 +16,16 @@
 
 #include "Const.h"
 #include "HiddenInfo.h"
+#include "XiTrackBase.h"
 
 namespace Hal {
   class Track;
   class V0Track;
-  class XiTrack : public HiddenInfo {
-    Int_t fTrackId           = {-1};//to
+  class XiTrack : public XiTrackBase {
+    //Int_t fTrackId           = {-1};//to
     Int_t fV0Id              = {-1};
     Int_t fChargedId         = {-1};
-    Int_t fAssumedPdg        = {-1};//to
+    //Int_t fAssumedPdg        = {-1};//to
     Int_t fAssumedPdgNeu     = {-1};
     Int_t fAssumedPdgCharged = {-1};
     TVector3 fDcaNeu;  // DCA of neutral daughter
@@ -33,18 +34,18 @@ namespace Hal {
     TVector3 fMomCharged;
     Double_t fAlpha;
     Double_t fPtArm;
-    TVector3 fDecay;//to
-    Double_t fDecayLength;
-    Double_t fCosAngle;//to
+    //TVector3 fDecay;//to
+    //Double_t fDecayLength;
+    //Double_t fCosAngle;//to
     Double_t fDauDist;
 
   public:
     XiTrack() {};
-    /**
-     * Set id of track in event
-     * @param id
-     */
-    void SetTrackId(Int_t id) { fTrackId = id; }
+    // /**
+    //  * Set id of track in event
+    //  * @param id
+    //  */
+    // void SetTrackId(Int_t id) { fTrackId = id; }
     /**
      * Set id of V0 in event
      * @param neu
@@ -61,19 +62,19 @@ namespace Hal {
      */
     void SetDauDist(Double_t dauDist) { fDauDist = dauDist; }
 
-    void SetDecayPos(const TVector3& pos) { fDecay = pos; }
-    void SetDecayPos(Double_t x, Double_t y, Double_t z) { fDecay.SetXYZ(x, y, z); }
+    // void SetDecayPos(const TVector3& pos) { fDecay = pos; }
+    // void SetDecayPos(Double_t x, Double_t y, Double_t z) { fDecay.SetXYZ(x, y, z); }
     void RotateZ(Double_t /*phi*/) {};  // TODO implement
 
-    /**
-     * Get id of track in event
-     * @return track id
-     */
-    Int_t GetTrackId() const { return fTrackId; }
-    /**
-     * @return assumed PDG of this particle
-     */
-    inline Int_t GetPdg() const { return fAssumedPdg; };
+    // /**
+    //  * Get id of track in event
+    //  * @return track id
+    //  */
+    // Int_t GetTrackId() const { return fTrackId; }
+    // /**
+    //  * @return assumed PDG of this particle
+    //  */
+    // inline Int_t GetPdg() const { return fAssumedPdg; };
     /**
      * @return assumed PDG of neutral daughter
      */
@@ -82,11 +83,11 @@ namespace Hal {
      * @return assumed PDG of charged daughter
      */
     inline Int_t GetPdgChargedDau() const { return fAssumedPdgCharged; };
-    /**
-     * @return lenght of decay
-     */
-    Double_t GetDecayLength() const { return fDecayLength; }
-    void SetDecLenght(Double_t len) { fDecayLength = len; }
+    // /**
+    //  * @return lenght of decay
+    //  */
+    // Double_t GetDecayLength() const { return fDecayLength; }
+    // void SetDecLenght(Double_t len) { fDecayLength = len; }
     /**
      * Set assumed PDG of this particle
      * @param pid

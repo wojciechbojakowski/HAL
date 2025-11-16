@@ -53,7 +53,7 @@ namespace Hal {
     if (IsXi()) {
       //std::cout<<"CopyData Xi part called in Track\n";
       fHiddenInfo = GetEvent()->fTotalXis++;
-      XiTrack3Particle* xi = (XiTrack3Particle*) GetEvent()->fXisHiddenInfo->ConstructedAt(fHiddenInfo);
+      XiTrackBase* xi = (XiTrackBase*) GetEvent()->fXisHiddenInfo->ConstructedAt(fHiddenInfo);
       xi->CopyData(other->GetXiInfo());
     }
   }
@@ -93,7 +93,7 @@ namespace Hal {
         vec[size++] = v0->GetNegId();
       }
       if (IsGoodXi()) {
-        XiTrack3Particle* xi  = GetXiInfo();
+        XiTrackBase* xi  = GetXiInfo();
         //TODO: implement SetPdgDaughters in XiTrack3particle
         // vec[size++]  = xi->GetV0Id();
         // vec[size++]  = xi->GetChId();
@@ -114,7 +114,7 @@ namespace Hal {
         vec.push_back(GetV0Info()->GetNegId());
       }
       if (IsGoodXi()) {
-        XiTrack3Particle* xi = GetXiInfo();
+        XiTrackBase* xi = GetXiInfo();
         //TODO: implement SetPdgDaughters in XiTrack3particle
         // vec.push_back(xi->GetV0Id());
         // vec.push_back(xi->GetChId());
@@ -347,12 +347,12 @@ namespace Hal {
     }
   }
 
-  XiTrack3Particle* Track::GetXiInfo() const {
+  XiTrackBase* Track::GetXiInfo() const {
     // std::cout<<"GetXiInfo called "<<!TESTBIT(fType, kXi)<<"\n";
     if (!TESTBIT(fType, kXi)) return nullptr;
     // std::cout<<"fHiddenInfo getXi set to "<<fHiddenInfo<<"\n";
     // std::cout<<"track "<<this<<"\n";
-    return (XiTrack3Particle*) fEvent->fXisHiddenInfo->UncheckedAt(fHiddenInfo);
+    return (XiTrackBase*) fEvent->fXisHiddenInfo->UncheckedAt(fHiddenInfo);
   }
 
 }  // namespace Hal

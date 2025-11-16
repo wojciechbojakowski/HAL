@@ -14,6 +14,7 @@
 namespace Hal {
 
   void XiTrack::CopyData(XiTrack* v) {
+    XiTrackBase::CopyData(v);
     fV0Id              = v->fV0Id;
     fTrackId           = v->fTrackId;
     fChargedId         = v->fChargedId;
