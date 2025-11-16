@@ -50,7 +50,7 @@ namespace Hal {
     dca.SetXYZ(pozV0.X() + t * Mom.X(), pozV0.Y() + t * Mom.Y(), pozV0.Z() + t * Mom.Z());
     TVector3 dca_rel = dca - pozV0;
     fCosAngle        = pozV0 * Mom / (Ptot * pozV0.Mag());
-    SetDecLenght(dca_rel.Mag());
+    SetDecayLength(dca_rel.Mag());
     return dca;
   }
 
