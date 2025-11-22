@@ -14,5 +14,6 @@ void XiTrackBase::CopyData(XiTrackBase* v){
     fDecay       = v->fDecay;
     fDecayLength = v->fDecayLength;
     fCosAngle    = v->fCosAngle;
+    kMass        = v->kMass;
 }
 }

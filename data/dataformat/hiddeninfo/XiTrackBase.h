@@ -27,6 +27,7 @@ protected:
     TVector3 fDecay;
     Double_t fDecayLength = 0.0;
     Double_t fCosAngle    = 0.0;
+    Double_t kMass        = 0.0;
 
 public:
     XiTrackBase() {};
@@ -90,6 +91,9 @@ public:
      * @return cosine of pointing angle
      */
     Double_t GetCosAngle() const { return fCosAngle; }
+
+    void SetMass(Double_t mass) { kMass = mass; }
+    Double_t GetMass() const { return kMass; }
 
     virtual void CopyData(XiTrackBase* v);
 
