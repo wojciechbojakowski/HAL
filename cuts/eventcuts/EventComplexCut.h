@@ -19,6 +19,9 @@ namespace Hal {
     ULong64_t fNullObjects;
     Bool_t fAcceptNulls;
 
+  protected:
+    virtual Hal::Cut* MakeInnerCopy() const;
+
   public:
     EventComplexCut();
     EventComplexCut(const EventCut* real, const EventCut* img);
@@ -37,6 +40,11 @@ namespace Hal {
 
   class EventRealCut : public EventCut {
     EventCut* fRealCut;
+
+  protected:
+    virtual Hal::Cut* MakeInnerCopy() const;
+    /** save copy ctor  for make inner copy*/
+    EventRealCut(const EventRealCut& other, Bool_t safe);
 
   public:
     EventRealCut();
@@ -57,6 +65,11 @@ namespace Hal {
     EventCut* fImgCut;
     ULong64_t fNullObjects;
     Bool_t fAcceptNulls;
+
+  protected:
+    virtual Hal::Cut* MakeInnerCopy() const;
+    /** save copy ctor  for make inner copy*/
+    EventImaginaryCut(const EventImaginaryCut& other, Bool_t safe);
 
   public:
     EventImaginaryCut();

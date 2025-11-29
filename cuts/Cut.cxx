@@ -1,7 +1,9 @@
 #include "Cut.h"
 
 #include <RtypesCore.h>
+#include <TClass.h>
 #include <TObjArray.h>
+#include <iostream>
 #include <stddef.h>
 #include <utility>
 
@@ -300,4 +302,22 @@ namespace Hal {
     std::vector<std::pair<TString, Double_t>> x;
     return x;
   }
+
+  Cut* Cut::MakeInnerCopy() const {
+    if (Hal::Cout::GetVerboseMode() == Hal::EInfo::kDebugInfo) {
+      TClass* c = TClass::GetClass(ClassName());
+      if (!c) {
+        Hal::Cout::PrintInfo(Form("%s is not recognized as class", ClassName()), EInfo::kDebugInfo);
+      } else {
+        if (!c->HasDictionary()) { Hal::Cout::PrintInfo(Form("%s has no dictionary", ClassName()), EInfo::kDebugInfo); }
+      }
+    }
+    return (Cut*) this->Clone();
+  }
+
+  void CutBackdoor::SetValue(Cut& cut, Double_t value, Int_t index) const { cut.SetValue(value, index); }
+
+
+  void CutBackdoor::SetUnitName(Cut& cut, TString unitName, Int_t index) const { cut.SetUnitName(unitName, index); }
+
 }  // namespace Hal

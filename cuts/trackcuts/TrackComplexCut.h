@@ -21,6 +21,9 @@ namespace Hal {
     ULong64_t fNullObjects;
     Bool_t fAcceptNulls;
 
+  protected:
+    virtual Hal::Cut* MakeInnerCopy() const;
+
   public:
     /**
      * dummy ct-ro only for ROOT
@@ -57,6 +60,11 @@ namespace Hal {
   class TrackRealCut : public TrackCut {
     TrackCut* fRealCut;
 
+  protected:
+    virtual Hal::Cut* MakeInnerCopy() const;
+    /** save copy ctor  for make inner copy*/
+    TrackRealCut(const TrackRealCut& other, Bool_t safe);
+
   public:
     TrackRealCut();
     TrackRealCut(const TrackCut* real);
@@ -76,6 +84,11 @@ namespace Hal {
     TrackCut* fImgCut;
     ULong64_t fNullObjects;
     Bool_t fAcceptNulls;
+
+  protected:
+    virtual Hal::Cut* MakeInnerCopy() const;
+    /** save copy ctor  for make inner copy*/
+    TrackImaginaryCut(const TrackImaginaryCut& other, Bool_t safe);
 
   public:
     TrackImaginaryCut();
