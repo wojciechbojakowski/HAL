@@ -162,7 +162,7 @@ namespace Hal {
     metadata_new->AddObject(new ParameterString("Input file", DataManager::Instance()->GetSourceName(), 'f'));
     if (!fFixRoot) {
       if (gInterpreter->GetCurrentMacroName())
-        metadata_new->AddObject(new ParameterString("Input macro", gInterpreter->GetCurrentMacroName(), 'f'));
+        //metadata_new->AddObject(new ParameterString("Input macro", gInterpreter->GetCurrentMacroName(), 'f'));
       else
         metadata_new->AddObject(new ParameterString("Input macro", "Loaded by user", 'f'));
     } else {
