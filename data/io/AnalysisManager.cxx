@@ -163,7 +163,7 @@ namespace Hal {
     if (!fFixRoot) {
       if (gInterpreter->GetCurrentMacroName()){
         std::cout<<"Current macro name: "<<gInterpreter->GetCurrentMacroName()<<std::endl;
-        metadata_new->AddObject(new ParameterString("Input macro", 140, "f");
+        metadata_new->AddObject(new ParameterString("Input macro", Hal::Std::GetDate(), "f");
         //metadata_new->AddObject(new ParameterString("Input macro", gInterpreter->GetCurrentMacroName(), 'f'));
       }
               else
