@@ -27,6 +27,7 @@
 #include <csignal>
 #include <cstdlib>
 #include <thread>
+#include <iostream>
 
 #include <RtypesCore.h>
 #include <TFile.h>
